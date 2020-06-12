@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>History - Smart Card</title>
+        <meta name="description" content="Site to control Smart Card. Play card games without having to deal the cards yourself.">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="msapplication-TileColor" content="#44c8f5">
+        <meta name="theme-color" content="#44c8f5">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+        <link rel="manifest" href="site.webmanifest">
+        <link rel="mask-icon" href="safari-pinned-tab.svg" color="#44c8f5">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/screen.css">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js" integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
+        <script src="script/datahandler.js"></script>
+        <script src="script/history.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    </head>
+    <body>
+        <header class="o-row o-row--intro">
+            <div class="o-container">
+                <div class="c-header">
+                    <div class="c-header__nav">
+                        <nav class="c-nav">
+                            <ul class="o-list c-nav__list">
+                                <li class="c-nav__item"><a class="c-nav__link" href="index.html">Games</a></li>
+                                <li class="c-nav__item"><a class="c-nav__link" href="settings.html">Game settings</a></li>
+                                <li class="c-nav__item"><a class="c-nav__link" href="history.html">Sensor history</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="c-header__mobile-nav-trigger">
+                        <button class="o-button-reset c-nav-trigger js-toggle-nav">
+                          <svg class="c-nav-trigger__svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+                          </svg>
+                        </button>
+                    </div>
+                </div>
+                <h1>History</h1>
+            </div>
+        </header>
+        
+        <section class="o-row o-row--xl o-row--neutral-light">
+            <h2>Graph with logged sensor values and underneath a table with the most recent values.</h2>
+            <label for="sensors">Choose a sensor to search:</label>
+            <select name="sensors" class="js-select-sensor" id="select-sensor"></select>
+        
+        <input type="button" name="log" id="log" value="Log new sensor values" class="js-log-values">
+        <p class="js-error-message"></p>
+        <div>
+            <canvas id="myChart" width="300" height="100"></canvas>
+          </div>
+        <table class="js-history-table">
+            <tr class="odd">
+                <th>Sensor name</th>
+                <th>Value</th>
+                <th>Unit</th>
+                <th>Date</th>
+            </tr>
+        </table>
+    </section>
+        <aside class="c-mobile-nav">
+            <div class="c-mobile-nav__bg"></div>
+            <div class="c-mobile-nav__body">
+              <div class="c-mobile-nav__header">
+                <button class="o-button-reset c-nav-trigger js-toggle-nav">
+                  <svg class="c-nav-trigger__svg--dark" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div class="c-mobile-nav__nav c-mobile_nav__nav--main">
+                <nav class="c-nav">
+                  <ul class="o-list c-nav__list">
+                    <li class="c-nav__item"><a href="index.html" class="c-nav__link--dark">Games</a></li>
+                    <li class="c-nav__item"><a href="settings.html" class="c-nav__link--dark">Game settings</a></li>
+                    <li class="c-nav__item"><a href="history.html" class="c-nav__link--dark">Sensor history</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </aside>
+        <footer class="c-footer">
+            <p>By <strong>Tom Maenhoudt</strong></p>
+        </footer>
+    </body>
+</html>
