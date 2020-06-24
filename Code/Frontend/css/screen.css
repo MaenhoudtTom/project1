@@ -1,0 +1,1438 @@
+/*------------------------------------*\
+  #FONTS
+\*------------------------------------*/
+
+@font-face {
+    font-family: "Chivo";
+    font-weight: 400;
+    src: url("../fonts/Chivo-Regular.otf") format("otf");
+}
+
+@font-face {
+    font-family: "Chivo";
+    font-weight: 600;
+    src: url("../fonts/Chivo-Medium.otf") format("otf");
+}
+
+@font-face {
+    font-family: "Chivo";
+    font-weight: 700;
+    src: url("../fonts/Chivo-Bold.otf") format("otf");
+}
+
+/*------------------------------------*\
+  #GENERIC
+\*------------------------------------*/
+
+/*
+    Generic: Page
+    ---
+    Global page styles + universal box-sizing:
+*/
+
+html {
+    font-size: 16px;
+    line-height: 19px;
+    font-family: "Chivo", "Helvetica Neue", Helvetica, arial, sans-serif;
+    color: #14161A;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Customize the background color to match your design.
+ */
+
+
+::selection {
+    background: #3CA4BD;
+    color: white;
+    text-shadow: none;
+}
+
+/*------------------------------------*\
+  #Elements
+\*------------------------------------*/
+
+/*
+    Elements: Images
+    ---
+    Default markup for images to make them responsive
+*/
+
+img {
+    max-width: 100%;
+    vertical-align: top;
+}
+
+/*
+    Elements: typography
+    ---
+    Default markup for typographic elements
+*/
+
+h1 {
+    font-size: 54px;
+    line-height: 65px;
+    margin: 0 0 24px;
+}
+
+h2 {
+    font-size: 24px;
+    line-height: 29px;
+    margin: 0 0 24px;
+}
+
+h3 {
+    font-size: 18px;
+    line-height: 24px;
+    margin: 0 0 24px;
+}
+
+h4,
+h5,
+h6 {
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0 0 24px;
+}
+
+p,
+ol,
+ul,
+dl,
+table,
+address,
+figure {
+    margin: 0 0 24px;
+}
+
+ul,
+ol {
+    padding-left: 24px;
+}
+
+li ul,
+li ol {
+    margin-bottom: 0;
+}
+
+blockquote {
+    font-style: italic;
+    font-size: 23px;
+    line-height: 32px;
+    margin: 0 0 24px;
+    font-family: "Times New Roman", serif;
+}
+
+blockquote * {
+    font-size: inherit;
+    line-height: inherit;
+}
+
+figcaption {
+    font-size: 12px;
+    line-height: 16px;
+    padding-top: 8px;
+    color: Grey;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: LightGrey;
+    margin: 0 0 24px;
+}
+
+a {
+    font-weight: 600;
+    color: #FAFAFA; 
+    transition: all .1s ease-in-out;
+}
+
+a:visited,
+a:active {
+    color: #FAFAFA ;
+}
+
+a:hover,
+a:focus {
+    color: #FAFAFA;
+}
+
+table {
+    /* width: 100%; */
+    border-spacing: 0;
+    margin-bottom: 48px;
+}
+
+th {
+    text-align: left;
+}
+
+th,
+td {
+    padding: 16px 24px 16px 0;
+    border-bottom: 1px solid #DBDBDB;
+}
+
+/*------------------------------------*\
+  #OBJECTS
+\*------------------------------------*/
+
+/*
+    Objects: Row
+    ---
+    Creates a horizontal row that stretches the viewport and adds padding around children
+*/
+
+.o-row {
+    padding: 24px 24px 0;
+    display: flow-root;
+}
+
+/* Color modifiers */
+
+.o-row--neutral-light {
+    color: #565656;
+    background-color: #fff;
+    justify-content: center;
+    align-items: center;
+}
+
+.o-row--intro {
+    color: #FAFAFA;
+    background-color: #2D7B8E;
+    /* background-color: #565656; */
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+/* size modifiers */
+
+.o-row--lg {
+    padding-top: 48px;
+    padding-bottom: 24px;
+}
+
+.o-row--xl {
+    padding-top: 72px;
+    padding-bottom: 48px;
+}
+
+@media (min-width: 768px) {
+    .o-row {
+        padding-left: 48px;
+        padding-right: 48px;
+    }
+
+    .o-row--md {
+        padding-top: 48px;
+        padding-bottom: 24px;
+    }
+
+    .o-row--lg {
+        padding-top: 72px;
+        padding-bottom: 48px;
+    }
+}
+
+/*
+    Objects: Container
+    ---
+    Creates a horizontal container that sets de global max-width
+*/
+
+.o-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 88em; /* 64.75 * 16px = 1356px */
+}
+
+/*
+    Objects: section
+    ---
+    Creates vertical whitespace between adjacent sections inside a row
+*/
+
+.o-section {
+    display: flow-root;
+}
+
+.o-section + .o-section {
+    margin-top: 24px;
+}
+
+@media (min-width: 768px) {
+    .o-section--lg + .o-section--lg,
+    .o-section--xl + .o-section--xl {
+        margin-top: 48px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .o-section--xl + .o-section--xl {
+        margin-top: 72px;
+    }
+}
+
+/*
+    Objects: Layout
+    ---
+    The layout object provides us with a column-style layout system. This object
+    contains the basic structural elements, but classes should be complemented
+    with width utilities
+*/
+
+.o-layout {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+    .o-layout__item {
+        flex-basis: 100%;
+    }
+
+/* gutter modifiers, these affect o-layout__item too */
+
+.o-layout--gutter {
+    margin: 0 -12px;
+}
+
+.o-layout--gutter > .o-layout__item {
+    padding: 0 12px;
+}
+
+.o-layout--gutter-sm {
+    margin: 0 -6px;
+}
+
+.o-layout--gutter-sm > .o-layout__item {
+    padding: 0 6px;
+}
+
+.o-layout--gutter-lg {
+    margin: 0 -48px;
+}
+
+.o-layout--gutter-lg > .o-layout__item {
+    padding: 0 48px;
+}
+
+/* reverse horizontal row modifier */
+
+.o-layout--row-reverse {
+    flex-direction: row-reverse;
+}
+
+/* Horizontal alignment modifiers*/
+
+.o-layout--justify-start {
+    justify-content: flex-start;
+}
+
+.o-layout--justify-end {
+    justify-content: flex-end;
+}
+
+.o-layout--justify-center {
+    justify-content: center;
+}
+
+.o-layout--justify-space-around {
+    justify-content: space-around;
+}
+
+.o-layout--justify-space-evenly {
+    justify-content: space-evenly;
+}
+
+.o-layout--justify-space-between {
+    justify-content: space-between;
+}
+
+/* Vertical alignment modifiers */
+
+.o-layout--align-start {
+    align-items: flex-start;
+}
+
+.o-layout--align-end {
+    align-items: flex-end;
+}
+
+.o-layout--align-center {
+    align-items: center;
+}
+
+.o-layout--align-baseline {
+    align-items: baseline;
+}
+
+/* Vertical alignment modifiers that only work if there is one than one flex item */
+
+.o-layout--align-content-start {
+    align-content: start;
+}
+
+.o-layout--align-content-end {
+    align-content: end;
+}
+
+.o-layout--align-content-center {
+    align-content: center;
+}
+
+.o-layout--align-content-space-around {
+    align-content: space-around;
+}
+
+.o-layout--align-content-space-between {
+    align-content: space-between;
+}
+
+
+/*
+    Objects: List
+    ---
+    Small reusable object to remove default list styling from lists
+*/
+
+.o-list {
+    list-style: none;
+    padding: 0;
+}
+
+/*
+    Object: Button reset
+    ---
+    Small button reset object
+*/
+
+.o-button-reset {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+
+    /* inherit font & color from ancestor */
+    color: inherit;
+    font: inherit;
+
+    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+    line-height: normal;
+
+    /* Corrects font smoothing for webkit */
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+
+    /* Corrects inability to style clickable `input` types in iOS */
+    -webkit-appearance: none;
+}
+
+/*------------------------------------*\
+  #COMPONENTS
+\*------------------------------------*/
+
+/*
+    Component: Component name
+    ---
+    Component description
+*/
+
+/*
+    Component: Logo
+    ---
+    Website main logo
+*/
+
+.c-logo {
+    height: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.c-logo__symbol {
+    height: 100%;
+}
+
+/*
+    Component: header
+    ---
+    Main header of the website
+*/
+
+.c-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.c-header__nav,
+.c-header__cta {
+    display: none;
+}
+
+@media (min-width: 992px) {
+    .c-header__nav,
+    .c-header__cta {
+        display: block;
+    }
+
+    .c-header__nav {
+        /* margin-right: 20px; */
+        
+        /* solution 1 */
+        /* margin-left: auto; */
+
+        /* solution 2 */
+        display: flex;
+        flex-grow: 1;
+        justify-content: center;
+    }
+}
+
+/*
+    Component: Nav
+    ---
+    Main navigation of the site
+*/
+
+.c-nav-trigger {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 24px;
+    width: 24px;
+    height: 24px;
+    outline: none;
+}
+
+.c-nav-trigger__svg {
+    fill: #FAFAFA;
+    height: 100%;
+}
+
+.c-nav-trigger__svg--dark {
+    fill: #565656;
+    height: 100%;
+}
+
+.c-nav {
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.c-nav__link {
+    text-decoration: none;
+    font-weight: 600;
+    display: block;
+    padding: 8px 0;
+}
+
+.c-nav__link--dark {
+    text-decoration: none;
+    font-weight: 600;
+    display: block;
+    padding: 8px 0;
+}
+
+.c-nav__link,
+.c-nav__link:visited,
+.c-nav__link:active {
+    color: #FAFAFA;
+}
+
+.c-nav__link:hover,
+.c-nav__link:focus {
+    color: #D5F4FB;
+}
+
+.c-nav__link--dark,
+.c-nav__link--dark:visited,
+.c-nav__link--dark:active {
+    color: #565656;
+}
+
+.c-nav__link--dark:hover,
+.c-nav__link--dark:focus {
+    color: #696969;
+}
+
+@media (min-width: 992px) {
+    .c-nav__list {
+        display: flex;
+    }
+
+    .c-nav__item--cta {
+        margin-left: 20px;
+    }
+
+    .c-nav__link {
+        padding: 8px 20px;
+    }
+}
+
+/*
+    Component: mobile nav
+    ---
+    Dedicated mobile nav component
+*/
+
+.c-mobile-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100vh;
+    pointer-events: none;
+}
+
+.has-mobile-nav .c-mobile-nav {
+    pointer-events: auto;
+}
+
+.c-mobile-nav__header {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 16px;
+}
+
+.c-mobile-nav__bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #565656;
+    will-change: opacity;
+    opacity: 0;
+    transition: opacity .25s ease;
+}
+
+.has-mobile-nav .c-mobile-nav__bg {
+    opacity: .5;
+}
+
+.c-mobile-nav__body {
+    position: relative;
+    padding: 24px;
+    height: 100vh;
+    width: 100vw;
+    background-color: #fff;
+    will-change: transform;
+    transform: translateX(-100%);
+    transition: transform .25s ease;
+}
+
+.has-mobile-nav .c-mobile-nav__body {
+    transform: translateX(0);
+}
+
+@media (min-width: 768px) {
+    .c-mobile-nav__body {
+        padding: 48px;
+    }
+}
+
+@media (min-width: 992px) {
+    /* Hide the mobile nav on larger viewports even whent it's open on smaller screens */
+    .c-mobile-nav {
+        display: none !important;
+    }
+
+    .c-header__mobile-nav-trigger {
+        display: none !important;
+    }
+}
+
+/*
+    Component: CTA link
+    ---
+    Small cta link
+*/
+
+.c-link-cta {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 30px;
+    box-shadow: inset 0 0 0 1px #186FF2;
+    background: #186FF2;
+}
+
+.c-link-cta,
+.c-link-cta:visited,
+.c-link-cta:active {
+    color: #fff;
+}
+
+.c-link-cta:hover,
+.c-link-cta:focus {
+    color: #fff;
+    background: #186FF2;
+}
+
+.c-link-cta:active {
+    background-color: #186FF2;
+}
+
+.c-link-cta--lg {
+    font-size: 18px;
+    padding: 16px 34px;
+}
+
+/*
+    Component: Lead
+    ---
+    Lead type treatments to style everything that differs from standard typography elements
+*/
+
+.c-lead {
+    position: relative;
+}
+
+.c-lead--md {
+    font-size: 18px;
+    line-height: 32px;
+}
+
+.c-lead--lg {
+    font-size: 20px;
+    line-height: 32px;
+}
+
+.c-lead--xl {
+    font-size: 52px;
+    line-height: 64px;
+}
+
+@media (min-width: 768px) {
+    .c-lead--xl {
+        font-size: 52px;
+        line-height: 64px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .c-lead--xl {
+        font-size: 66px;
+        line-height: 80px;
+    }
+}
+
+/*
+    Component: Intro
+    ---
+    Intro part on the homepage
+*/
+
+.c-intro {
+    position: relative;
+}
+
+@media (max-width: 991px) {
+    .c-intro__figure {
+        display: none;
+    }
+}
+
+/*
+    Component: Footer
+    ---
+    Footer part of the page
+*/
+
+.c-footer {
+    text-align: center;
+}
+
+/*
+    Component: Add game
+    ---
+    Add game button of the main page
+*/
+
+.c-add-game {
+    position: fixed;
+    bottom: 16px;
+    right: 48px;
+}
+
+/* .c-add-game__button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+} */
+
+/*
+    Component: Edit game
+    ---
+    Edit game button from settings.html
+*/
+
+.c-edit-game {
+    width: 24px;
+    height: 24px;
+    margin: 0 24px;
+    float: right;
+}
+
+.c-edit-game__svg {
+    height: 100%;
+    fill: #565656;
+}
+
+/*
+    Component: Delete game
+    ---
+    Delete game button from settings.html
+*/
+
+.c-delete-game {
+    width: 24px;
+    height: 24px;
+    float: right;
+}
+
+.c-delete-game__svg {
+    height: 100%;
+    fill: #565656;
+}
+
+/*
+    Component: Games svg
+    ---
+    Games svg from navigation
+*/
+
+/* .c-games {
+    width: 36px;
+    height: 18px;
+}
+
+.c-games__svg {
+    height: 100%;
+    fill: #565656;
+} */
+
+/*
+    Component: settings svg
+    ---
+    Settings svg from navigation
+*/
+
+/* .c-settings {
+    width: 24px;
+    height: 24px;
+}
+
+.c-settings__svg {
+    height: 100%;
+    fill: #565656;
+} */
+
+/*
+    Component: history svg
+    ---
+    History svg from navigation
+*/
+
+.c-history {
+    width: 24px;
+    height: 24px;
+}
+
+.c-history__svg {
+    height: 100%;
+    fill: #565656;
+}
+
+/*
+    Component: error
+    ---
+    Error for when the sensor indicate that something is wrong with Smart Card
+*/
+
+.c-error {
+    display: flex;
+    flex-wrap: wrap;
+    border: #2D7B8E 3px solid;
+    background-color: #EBEBEB;
+    color: #000;
+    padding: 24px;
+    font-weight: 600;
+    flex-grow: 1;
+    margin-bottom: 24px;
+    text-align: center;
+    /* max-width: 400px; */
+}
+
+/*
+    Component: message
+    ---
+    Message to inform the user
+*/
+
+.c-message {
+    display: flex;
+    flex-wrap: wrap;
+    border: none;
+    background-color: #EBEBEB;
+    color: #000;
+    padding: 24px;
+    font-weight: 400;
+    flex-grow: 1;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+/*
+    Component: game button
+    ---
+    Game button to select a game you wanna play
+*/
+
+.c-games {
+    text-align: center;
+}
+
+.c-game-button {
+    display: flow-root;
+    text-decoration: none;
+    padding: 16px 96px;
+    background-color: #D5F4FB;
+    color: #565656 !important;
+    border: solid #565656;
+    margin: 0 0 24px;
+    /* margin-bottom: 24px;
+    margin-right: 24px; */
+    flex-grow: 1;
+}
+
+/*
+    Component: form settings
+    ---
+    Form to edit game settings
+*/
+
+.c-form-settings__row {
+    border: none;
+    margin: 0 0 24px;
+    max-width: 400px;
+}
+
+.c-form-settings__input {
+    border: none;
+    border-bottom: 3px solid #2D7B8E;
+    margin-left: 24px;
+    float: right;
+}
+
+.c-cancel-button {
+    font-weight: 600;
+    padding: 16px 32px;
+    float: right;
+}
+
+.c-save-button {
+    background-color: #2D7B8E;
+    color: #fff;
+    padding: 16px 32px;
+    font-weight: 600;
+    float: right;
+}
+
+.c-play-button {
+    background-color: #2D7B8E;
+    max-width: 400px;
+    color: #fff;
+    padding: 24px;
+    font-weight: 600;
+    flex-grow: 1;
+    cursor: pointer;
+}
+
+.c-form-label {
+    margin-bottom: 24px;
+}
+
+/*
+    Component: input
+    ---
+    Component to style input fields
+*/
+
+.c-input {
+    border: none;
+    border-bottom: 3px solid #2D7B8E;
+    
+}
+
+/*
+    Component: popup
+    ---
+    Popup message to confirm an action
+*/
+
+.c-popup {
+    position: relative;
+    display: inline-block;
+    /* cursor: pointer; */
+}
+
+.c-popup .c-popup__text {
+    visibility: hidden;
+    width: 360px;
+    background-color: #DBDBDB;
+    color: #565656;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+}
+
+.c-popup .c-popup__text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #DBDBDB transparent transparent transparent;
+}
+
+.c-popup .show {
+    visibility: visible;
+}
+
+.c-list-games {
+    display: flow-root;
+    text-decoration: none;
+    padding: 16px;
+    background-color: #D5F4FB;
+    color: #565656 !important;
+    border: solid #565656;
+    flex-grow: 1;
+    margin-bottom: 24px;
+}
+
+/* .c-list-games__row {
+    display: inline-flex;
+} */
+
+/*
+    Component: graph
+    ---
+    Graph from the history page
+*/
+
+.c-graph {
+    display: none;
+    text-align: center;
+    margin: auto;
+}
+
+@media (min-width: 992px) {
+    .c-graph {
+        display: block;
+    }
+}
+
+/*------------------------------------*\
+  #UTILITIES
+\*------------------------------------*/
+
+/*
+    Utilities: text decoration
+    ---
+    Utility class to remove text decoration from links
+*/
+
+.u-remove-decoration {
+    text-decoration: none;
+}
+
+/* 
+    Utilities: color
+    ---
+    Utility classes to put specific colors onto elements
+*/
+
+.u-color-neutral-base {
+    color: #45484D;
+    font-size: 24px;
+}
+
+.u-color-neutral-dark {
+    color: #949699;
+}
+
+/*
+    Utilities: spacing
+    ---
+    Utility classes to put specific margins and paddings onto elements
+*/
+
+.u-pt-clear {
+    padding-top: 0 !important;
+}
+
+.u-mb-clear {
+    margin-bottom: 0 !important;
+}
+
+.u-mb-xs {
+    margin-bottom: 4px !important;
+}
+
+.u-mb-sm {
+    margin-bottom: 8px !important;
+}
+
+.u-mb-md {
+    margin-bottom: 16px !important;
+}
+
+.u-mb-lg {
+    margin-bottom: 24px !important;
+}
+
+.u-mb-xl {
+    margin-bottom: 72px !important;
+}
+
+.u-mr-lg {
+    margin-right: 24px !important;
+}
+
+@media (min-width: 1200px) {
+    .u-mb-xl {
+        margin-bottom: 96px;
+    }
+}
+
+/*
+    Utilities: max-width
+    ---
+    Utility classes to put specific max widths onto elements
+*/
+
+.u-max-width-sm {
+    max-width: 36em !important;
+}
+
+.u-max-width-md {
+    max-width: 58em !important;
+}
+
+.u-max-width-lg {
+    max-width: 64em !important;
+}
+
+.u-max-width-xl {
+    max-width: 100em !important;
+}
+
+.u-max-width-none {
+    max-width: none !important;
+}
+
+/*
+    Utility: Flex
+    ---
+    Utility classes to put specific flex properties onto elements
+    Will be mostly used on o-layout__item
+*/
+
+.u-flex-basis-auto {
+    flex-basis: auto !important;
+}
+
+.u-flex-grow-1 {
+    flex-grow: 1 !important;
+}
+
+.u-1-of-2 {
+    flex-basis: calc(100% / 2) !important;
+}
+
+.u-1-of-3 {
+    flex-basis: calc(100% / 3) !important;
+}
+
+.u-2-of-3 {
+    flex-basis: calc(100% / 3 * 2) !important;
+}
+
+.u-1-of-4 {
+    flex-basis: calc(100% / 4) !important;
+}
+
+.u-3-of-4 {
+    flex-basis: calc(100% / 4 * 3) !important;
+}
+
+.u-1-of-5 {
+    flex-basis: calc(100% / 5) !important;
+}
+
+.u-2-of-5 {
+    flex-basis: calc(100% / 5 * 2) !important;
+}
+
+.u-3-of-5 {
+    flex-basis: calc(100% / 5 * 3) !important;
+}
+
+.u-4-of-5 {
+    flex-basis: calc(100% / 5 * 4) !important;
+}
+
+.u-1-of-6 {
+    flex-basis: calc(100% / 6) !important;
+}
+
+.u-5-of-6 {
+    flex-basis: calc(100% / 6 * 5) !important;
+}
+
+@media (min-width: 576px) {
+    .u-1-of-2-bp1 {
+        flex-basis: calc(100% / 2) !important;
+    }
+    .u-1-of-3-bp1 {
+        flex-basis: calc(100% / 3) !important;
+    }
+    .u-2-of-3-bp1 {
+        flex-basis: calc(100% / 3 * 2) !important;
+    }
+    .u-1-of-4-bp1 {
+        flex-basis: calc(100% / 4) !important;
+    }
+    .u-3-of-4-bp1 {
+        flex-basis: calc(100% / 4 * 3) !important;
+    }
+    .u-1-of-5-bp1 {
+        flex-basis: calc(100% / 5) !important;
+    }
+    .u-2-of-5-bp1 {
+        flex-basis: calc(100% / 5 * 2) !important;
+    }
+    .u-3-of-5-bp1 {
+        flex-basis: calc(100% / 5 * 3) !important;
+    }
+    .u-4-of-5-bp1 {
+        flex-basis: calc(100% / 5 * 4) !important;
+    }
+    .u-1-of-6-bp1 {
+        flex-basis: calc(100% / 6) !important;
+    }
+    .u-5-of-6-bp1 {
+        flex-basis: calc(100% / 6 * 5) !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .u-1-of-2-bp2 {
+        flex-basis: calc(100% / 2) !important;
+    }
+    .u-1-of-3-bp2 {
+        flex-basis: calc(100% / 3) !important;
+    }
+    .u-2-of-3-bp2 {
+        flex-basis: calc(100% / 3 * 2) !important;
+    }
+    .u-1-of-4-bp2 {
+        flex-basis: calc(100% / 4) !important;
+    }
+    .u-3-of-4-bp2 {
+        flex-basis: calc(100% / 4 * 3) !important;
+    }
+    .u-1-of-5-bp2 {
+        flex-basis: calc(100% / 5) !important;
+    }
+    .u-2-of-5-bp2 {
+        flex-basis: calc(100% / 5 * 2) !important;
+    }
+    .u-3-of-5-bp2 {
+        flex-basis: calc(100% / 5 * 3) !important;
+    }
+    .u-4-of-5-bp2 {
+        flex-basis: calc(100% / 5 * 4) !important;
+    }
+    .u-1-of-6-bp2 {
+        flex-basis: calc(100% / 6) !important;
+    }
+    .u-5-of-6-bp2 {
+        flex-basis: calc(100% / 6 * 5) !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .u-1-of-2-bp3 {
+        flex-basis: calc(100% / 2) !important;
+    }
+    .u-1-of-3-bp3 {
+        flex-basis: calc(100% / 3) !important;
+    }
+    .u-2-of-3-bp3 {
+        flex-basis: calc(100% / 3 * 2) !important;
+    }
+    .u-1-of-4-bp3 {
+        flex-basis: calc(100% / 4) !important;
+    }
+    .u-3-of-4-bp3 {
+        flex-basis: calc(100% / 4 * 3) !important;
+    }
+    .u-1-of-5-bp3 {
+        flex-basis: calc(100% / 5) !important;
+    }
+    .u-2-of-5-bp3 {
+        flex-basis: calc(100% / 5 * 2) !important;
+    }
+    .u-3-of-5-bp3 {
+        flex-basis: calc(100% / 5 * 3) !important;
+    }
+    .u-4-of-5-bp3 {
+        flex-basis: calc(100% / 5 * 4) !important;
+    }
+    .u-1-of-6-bp3 {
+        flex-basis: calc(100% / 6) !important;
+    }
+    .u-5-of-6-bp3 {
+        flex-basis: calc(100% / 6 * 5) !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .u-1-of-2-bp4 {
+        flex-basis: calc(100% / 2) !important;
+    }
+    .u-1-of-3-bp4 {
+        flex-basis: calc(100% / 3) !important;
+    }
+    .u-2-of-3-bp4 {
+        flex-basis: calc(100% / 3 * 2) !important;
+    }
+    .u-1-of-4-bp4 {
+        flex-basis: calc(100% / 4) !important;
+    }
+    .u-3-of-4-bp4 {
+        flex-basis: calc(100% / 4 * 3) !important;
+    }
+    .u-1-of-5-bp4 {
+        flex-basis: calc(100% / 5) !important;
+    }
+    .u-2-of-5-bp4 {
+        flex-basis: calc(100% / 5 * 2) !important;
+    }
+    .u-3-of-5-bp4 {
+        flex-basis: calc(100% / 5 * 3) !important;
+    }
+    .u-4-of-5-bp4 {
+        flex-basis: calc(100% / 5 * 4) !important;
+    }
+    .u-1-of-6-bp4 {
+        flex-basis: calc(100% / 6) !important;
+    }
+    .u-5-of-6-bp4 {
+        flex-basis: calc(100% / 6 * 5) !important;
+    }
+}
+
+/*------------------------------------*\
+  #MEDIA
+\*------------------------------------*/
+
+/*
+    Print styles.
+    ---
+    Inlined to avoid the additional HTTP request:
+    http://www.phpied.com/delay-loading-your-print-css/
+*/
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important;
+        /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+    pre {
+        white-space: pre-wrap !important;
+    }
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+    thead {
+        display: table-header-group;
+    }
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}

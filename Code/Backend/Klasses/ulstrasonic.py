@@ -36,14 +36,14 @@ class Ultrasonic:
 
         return distance
 
-# if __name__ == '__main__':
-#     try:
-#         ultra = Ultrasonic(25, 24)
-#         while True:
-#             distance = ultra.measure_distance()
-#             print(distance)
-#             time.sleep(1)
-#     except KeyboardInterrupt as e:
-#         print(e)
-#     finally:
-#         GPIO.cleanup()
+if __name__ == '__main__':
+    try:
+        ultra = Ultrasonic(25, 24)
+        while True:
+            distance = ultra.measure_distance()
+            print(distance)
+            time.sleep(1)
+    except KeyboardInterrupt as e:
+        print(e)
+    finally:
+        GPIO.cleanup()

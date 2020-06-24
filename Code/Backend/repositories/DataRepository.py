@@ -10,29 +10,6 @@ class DataRepository:
             gegevens = request.form.to_dict()
         return gegevens
 
-    @staticmethod
-    def read_status_lampen():
-        sql = "SELECT * from lampen"
-        return Database.get_rows(sql)
-
-    @staticmethod
-    def read_status_lamp_by_id(id):
-        sql = "SELECT * from lampen WHERE id = %s"
-        params = [id]
-        return Database.get_one_row(sql, params)
-
-    @staticmethod
-    def update_status_lamp(id, status):
-        sql = "UPDATE lampen SET status = %s WHERE id = %s"
-        params = [status, id]
-        return Database.execute_sql(sql, params)
-
-    @staticmethod
-    def update_status_alle_lampen(status):
-        sql = "UPDATE lampen SET status = %s"
-        params = [status]
-        return Database.execute_sql(sql, params)
-
     # CREATE methods
 
     @staticmethod
@@ -73,42 +50,9 @@ class DataRepository:
         return Database.get_one_row(sql, params)
 
     @staticmethod
-    def read_history():
-        sql = "SELECT * from History"
-        return Database.get_rows(sql)
-
-    @staticmethod
-    def read_history_by_id(id):
-        sql = "SELECT * from History where ID = %s"
-        params = [id]
-        return Database.get_one_row(sql, params)
-
-    @staticmethod
-    def read_playerinfo():
-        sql = "SELECT * from PlayerInfo"
-        return Database.get_rows(sql)
-
-    @staticmethod
-    def read_playerinfo_by_id(id):
-        sql = "SELECT * from PlayerInfo where ID = %s"
-        params = [id]
-        return Database.get_one_row(sql, params)
-
-    @staticmethod
     def read_playerinfo_by_data(age, minimumplayers, maximumplayers):
         sql = "select ID from PlayerInfo where MinimumAge = %s and MinimumPlayers = %s and MaximumPlayers = %s"
         params = [age, minimumplayers, maximumplayers]
-        return Database.get_one_row(sql, params)
-
-    @staticmethod
-    def read_rulesets():
-        sql = "SELECT * from Rulesets"
-        return Database.get_rows(sql)
-
-    @staticmethod
-    def read_ruleset_by_id(id):
-        sql = "SELECT * from Rulesets where ID = %s"
-        params = [id]
         return Database.get_one_row(sql, params)
 
     @staticmethod
@@ -135,13 +79,8 @@ class DataRepository:
         return Database.get_one_row(sql, params)
 
     @staticmethod
-    def read_sensors_with_history():
-        sql = "select Name, Type, Description, Unit, Value, Date from Sensors join History on Sensors.id = History.sensorid order by date desc"
-        return Database.get_rows(sql)
-
-    @staticmethod
     def read_history_by_sensorID(sensorID):
-        sql = "select Name, Type, Description, Unit, Value, Date from Sensors join History on Sensors.id = History.sensorid where sensorID = %s"
+        sql = "select Name, Type, Description, Unit, Value, Date from Sensors join History on Sensors.id = History.sensorid where sensorID = %s order by Date desc LIMIT 25"
         params = [sensorID]
         return Database.get_rows(sql, params)
 

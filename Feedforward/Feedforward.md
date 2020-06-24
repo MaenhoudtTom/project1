@@ -5,7 +5,7 @@
 
 **Projectsamenvatting in max 10 woorden:** Automatische kaartverdeler, verdeel kaarten en hou een scorebord bij.
 
-**Projecttitel:** Smart card distributor
+**Projecttitel:** Smart Card
 
 
 # Tips voor feedbackgesprekken
@@ -156,6 +156,3 @@ Lector: Claudia Eeckhout
 Vragen voor dit gesprek:
 - [x] vraag 1: text in error flexen
 - [ ] vraag 2: margin bij settings
-
-Dit is de feedback op mijn vragen. 
-- 

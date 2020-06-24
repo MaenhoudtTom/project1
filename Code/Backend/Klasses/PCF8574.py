@@ -89,11 +89,7 @@ class PCF8574:
 #         pcf.writebyte(pcf.address)
 #         #ack
 #         pcf.ack()
-#         while True:
-#             #data
-#             segmenten = pcf.nummers[pcf._cijfer] | pcf.dot << 7
-#             pcf.write_outputs(segmenten)
-#             time.sleep(pcf.delay)
+#         pcf.write_outputs(57)
 #     except KeyboardInterrupt as e:
 #         print(e)
 #     finally:

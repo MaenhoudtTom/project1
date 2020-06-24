@@ -13,7 +13,7 @@ class LCD_display:
         self.init_LCD()
 
     global pcf
-    pcf = PCF8574(17, 27, 64)
+    pcf = PCF8574(17, 27, 0x70)
 
     def setup(self):
         GPIO.setmode(GPIO.BCM)

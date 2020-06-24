@@ -43,3 +43,15 @@ class Mcp:
 # waarde_phototrans = phototrans.read_channel(phototrans.bus)
 # print(f"waarde phototransistor: {waarde_phototrans}")
 # phototrans.closespi()
+
+if __name__ == '__main__':
+    try:
+        mcp = Mcp()
+        while True:
+            print(mcp.read_channel(0))
+            time.sleep(0.5)
+    except KeyboardInterrupt as e:
+        print(e)
+    finally:
+        print('PI opkuisen')
+        GPIO.cleanup()
